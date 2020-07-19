@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "parcel public/index.html",
+    "build": "parcel build public/index.html",
     "clean": "rimraf .cache dist"
   },
   "devDependencies": {
