@@ -104,8 +104,13 @@ export const Book = ({
   box-shadow: inset 0px 0px 5px #aaa;
   transform: perspective(100px) rotateY(20deg);
 }`}
-        html={`<a className="book-container" href="${href}" target="_blank" rel="noreferrer noopener">
-  <div className="book">
+        html={`<a 
+  class="book-container"
+  ref="${href}"
+  target="_blank"
+  rel="noreferrer noopener"
+>
+  <div class="book">
     <img
       alt="${imageAlt}"
       src="${imageUrl}"
