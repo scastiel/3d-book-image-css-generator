@@ -8,7 +8,7 @@ export interface Props {
   rotate: string
   rotateHover: string
   perspective: string
-  transitionDelay: string
+  transitionDuration: string
   radius: string
   thickness: string
   bgColor: string
@@ -22,7 +22,7 @@ export const Book = ({
   rotate,
   rotateHover,
   perspective,
-  transitionDelay,
+  transitionDuration,
   radius,
   thickness,
   bgColor,
@@ -57,7 +57,7 @@ export const Book = ({
   --rotate: ${rotate};
   --rotateHover: ${rotateHover};
   --perspective: ${perspective};
-  --transitionDelay: ${transitionDelay};
+  --transitionDuration: ${transitionDuration};
   --radius: ${radius};
   --thickness: ${thickness};
   --bgColor: ${bgColor};
@@ -78,7 +78,7 @@ export const Book = ({
   margin-left: calc(-15px - var(--thickness));
   background: var(--bgColor);
   transform: perspective(var(--perspective)) rotateY(var(--rotate));
-  transition: transform ease var(--transitionDelay);
+  transition: transform ease var(--transitionDuration);
   position: relative;
 }
 
@@ -117,7 +117,7 @@ export const Book = ({
 }`}
         html={`<a 
   class="book-container"
-  ref="${href}"
+  href="${href}"
   target="_blank"
   rel="noreferrer noopener"
 >

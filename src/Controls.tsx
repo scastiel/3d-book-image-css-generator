@@ -16,7 +16,7 @@ export const defaultValues = {
   rotate: -30,
   rotateHover: -20,
   perspective: 600,
-  transitionDelay: 1,
+  transitionDuration: 1,
   radius: 2,
   thickness: 15,
   bgColor: '#01060f',
@@ -31,8 +31,8 @@ export const Controls = () => {
   const [rotate, setRotate] = useState(defaultValues.rotate)
   const [rotateHover, setRotateHover] = useState(defaultValues.rotateHover)
   const [perspective, setPerspective] = useState(defaultValues.perspective)
-  const [transitionDelay, setTransitionDelay] = useState(
-    defaultValues.transitionDelay
+  const [transitionDuration, setTransitionDuration] = useState(
+    defaultValues.transitionDuration
   )
   const [radius, setRadius] = useState(defaultValues.radius)
   const [thickness, setThickness] = useState(defaultValues.thickness)
@@ -46,7 +46,7 @@ export const Controls = () => {
     setRotate(defaultValues.rotate)
     setRotateHover(defaultValues.rotateHover)
     setPerspective(defaultValues.perspective)
-    setTransitionDelay(defaultValues.transitionDelay)
+    setTransitionDuration(defaultValues.transitionDuration)
     setRadius(defaultValues.radius)
     setThickness(defaultValues.thickness)
     setWidth(defaultValues.width)
@@ -133,13 +133,13 @@ export const Controls = () => {
           onChange={(e) => setPerspective(Number(e.target.value))}
         />
         <RangeInput
-          label="Transition delay:"
+          label="Anim. duration:"
           unit="s"
           min={0}
           max={5}
-          value={transitionDelay}
+          value={transitionDuration}
           step={0.5}
-          onChange={(e) => setTransitionDelay(Number(e.target.value))}
+          onChange={(e) => setTransitionDuration(Number(e.target.value))}
         />
         <RangeInput
           label="Radius:"
@@ -178,7 +178,7 @@ export const Controls = () => {
         rotate={`${rotate}deg`}
         rotateHover={`${rotateHover}deg`}
         perspective={`${perspective}px`}
-        transitionDelay={`${transitionDelay}s`}
+        transitionDuration={`${transitionDuration}s`}
         radius={`${radius}px`}
         thickness={`${thickness}px`}
         width={`${width}px`}
