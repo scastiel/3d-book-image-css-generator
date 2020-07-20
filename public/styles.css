@@ -246,3 +246,11 @@ input[type='range']:focus::-ms-fill-lower {
 input[type='range']:focus::-ms-fill-upper {
   background: var(--primaryColor);
 }
+
+.self-promotion {
+  background-color: #e3f2fd;
+  padding: 0.75rem 1rem 1rem;
+  width: 100%;
+  text-align: center;
+  border-radius: 1rem;
+}

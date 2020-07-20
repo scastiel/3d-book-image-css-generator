@@ -40,6 +40,17 @@ export const Book = ({
           <img alt={imageAlt} src={imageUrl} />
         </div>
       </a>
+      <p className="self-promotion">
+        Pssst, the default cover is the one of the book I’m currently writing!{' '}
+        <a
+          href="https://leanpub.com/outstanding-developer"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Check it out on LeanPub
+        </a>{' '}
+        😉
+      </p>
       <Outputs
         /* prettier-ignore */
         css={`.book-container {
