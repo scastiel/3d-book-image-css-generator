@@ -13,14 +13,15 @@ export const defaultValues = {
   imageUrl: '',
   imageAlt: '',
   href: '',
-  rotate: -30,
-  rotateHover: -20,
+  rotate: 30,
+  rotateHover: 0,
   perspective: 600,
   transitionDuration: 1,
   radius: 2,
-  thickness: 15,
+  thickness: 50,
   bgColor: '#01060f',
   width: 200,
+  height: 300,
 }
 
 export const Controls = () => {
@@ -37,6 +38,7 @@ export const Controls = () => {
   const [radius, setRadius] = useState(defaultValues.radius)
   const [thickness, setThickness] = useState(defaultValues.thickness)
   const [width, setWidth] = useState(defaultValues.width)
+  const [height, setHeight] = useState(defaultValues.height)
 
   const reset = useCallback(() => {
     setImageUrl(defaultValues.imageUrl)
@@ -50,6 +52,7 @@ export const Controls = () => {
     setRadius(defaultValues.radius)
     setThickness(defaultValues.thickness)
     setWidth(defaultValues.width)
+    setHeight(defaultValues.height)
   }, [])
 
   return (
@@ -108,8 +111,8 @@ export const Controls = () => {
         <RangeInput
           label="Rotate:"
           unit="deg"
-          min={-40}
-          max={-20}
+          min={0}
+          max={45}
           value={rotate}
           step={1}
           onChange={(e) => setRotate(Number(e.target.value))}
@@ -117,8 +120,8 @@ export const Controls = () => {
         <RangeInput
           label="Rotate (hover):"
           unit="deg"
-          min={-40}
-          max={-20}
+          min={0}
+          max={45}
           value={rotateHover}
           step={1}
           onChange={(e) => setRotateHover(Number(e.target.value))}
@@ -126,8 +129,8 @@ export const Controls = () => {
         <RangeInput
           label="Perspective:"
           unit="px"
-          min={0}
-          max={1500}
+          min={300}
+          max={1300}
           value={perspective}
           step={100}
           onChange={(e) => setPerspective(Number(e.target.value))}
@@ -145,7 +148,7 @@ export const Controls = () => {
           label="Radius:"
           unit="px"
           min={0}
-          max={10}
+          max={5}
           value={radius}
           step={1}
           onChange={(e) => setRadius(Number(e.target.value))}
@@ -154,7 +157,7 @@ export const Controls = () => {
           label="Thickness:"
           unit="px"
           min={5}
-          max={50}
+          max={100}
           value={thickness}
           step={5}
           onChange={(e) => setThickness(Number(e.target.value))}
@@ -163,10 +166,19 @@ export const Controls = () => {
           label="Width:"
           unit="px"
           min={50}
-          max={1000}
+          max={300}
           value={width}
-          step={50}
+          step={25}
           onChange={(e) => setWidth(Number(e.target.value))}
+        />
+        <RangeInput
+          label="Height:"
+          unit="px"
+          min={75}
+          max={450}
+          value={height}
+          step={25}
+          onChange={(e) => setHeight(Number(e.target.value))}
         />
         <button onClick={reset}>Reset with defaults</button>
       </div>
@@ -175,13 +187,14 @@ export const Controls = () => {
         imageAlt={imageAlt || demoValues.imageAlt}
         href={href || demoValues.href}
         bgColor={bgColor}
-        rotate={`${rotate}deg`}
-        rotateHover={`${rotateHover}deg`}
+        rotate={`${-rotate}deg`}
+        rotateHover={`${-rotateHover}deg`}
         perspective={`${perspective}px`}
         transitionDuration={`${transitionDuration}s`}
         radius={`${radius}px`}
         thickness={`${thickness}px`}
         width={`${width}px`}
+        height={`${height}px`}
       />
     </div>
   )
