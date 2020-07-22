@@ -6,7 +6,7 @@ import cover from '../assets/book-cover.png'
 export const demoValues = {
   imageUrl: cover as string,
   imageAlt: 'The Outstanding Developer by Sebastien Castiel',
-  href: 'https://leanpub.com/outstanding-developer',
+  href: 'https://theoutstanding.dev/',
 }
 
 export const defaultValues = {

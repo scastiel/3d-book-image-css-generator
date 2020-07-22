@@ -44,14 +44,7 @@ export const Book = ({
       </a>
       <p className="self-promotion">
         Pssst, the default cover is the one of the book I’m currently writing!{' '}
-        <a
-          href="https://leanpub.com/outstanding-developer"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Check it out on LeanPub
-        </a>{' '}
-        😉
+        <a href="https://theoutstanding.dev/">Check it out</a> 😉
       </p>
       <Outputs
         /* prettier-ignore */
