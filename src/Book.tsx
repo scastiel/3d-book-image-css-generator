@@ -74,6 +74,15 @@ export const Book = ({
   --pagesOffset: 3px;
 }
 
+@keyframes initAnimation {
+  0% {
+    transform: rotateY(var(--rotateHover));
+  }
+  100% {
+    transform: rotateY(var(--rotate));
+  }
+}
+
 .book {
   width: var(--width);
   height: var(--height);
@@ -81,6 +90,7 @@ export const Book = ({
   transform-style: preserve-3d;
   transform: rotateY(var(--rotate));
   transition: var(--transitionDuration) ease;
+  animation: 1s ease 0s 1 initAnimation;
 }
 
 .book:hover {
