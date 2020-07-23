@@ -5,15 +5,16 @@ export interface Props {
   imageUrl: string
   imageAlt: string
   href: string
-  rotate: string
-  rotateHover: string
-  perspective: string
-  transitionDuration: string
-  radius: string
-  thickness: string
+  rotate: number
+  rotateHover: number
+  perspective: number
+  transitionDuration: number
+  radius: number
+  thickness: number
   bgColor: string
-  width: string
-  height: string
+  width: number
+  height: number
+  pagesOffset: number
 }
 
 export const Book = ({
@@ -29,6 +30,7 @@ export const Book = ({
   bgColor,
   width,
   height,
+  pagesOffset,
 }: Props) => {
   return (
     <>
@@ -48,46 +50,34 @@ export const Book = ({
       </p>
       <Outputs
         /* prettier-ignore */
-
         css={`.book-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  perspective: var(--perspective);
-  
-  --rotate: ${rotate};
-  --rotateHover: ${rotateHover};
-  --perspective: ${perspective};
-  --transitionDuration: ${transitionDuration};
-  --radius: ${radius};
-  --thickness: ${thickness};
-  --bgColor: ${bgColor};
-  --width: ${width};
-  --height: ${height};
-  --pagesOffset: 3px;
+  perspective: ${perspective}px;
 }
 
 @keyframes initAnimation {
   0% {
-    transform: rotateY(var(--rotateHover));
+    transform: rotateY(${rotateHover}deg);
   }
   100% {
-    transform: rotateY(var(--rotate));
+    transform: rotateY(${rotate}deg);
   }
 }
 
 .book {
-  width: var(--width);
-  height: var(--height);
+  width: ${width}px;
+  height: ${height}px;
   position: relative;
   transform-style: preserve-3d;
-  transform: rotateY(var(--rotate));
-  transition: var(--transitionDuration) ease;
+  transform: rotateY(${rotate}deg);
+  transition: ${transitionDuration}s ease;
   animation: 1s ease 0s 1 initAnimation;
 }
 
 .book:hover {
-  transform: rotateY(var(--rotateHover));
+  transform: rotateY(${rotateHover}deg);
 }
 
 .book > :first-child {
@@ -95,11 +85,11 @@ export const Book = ({
   top: 0;
   left: 0;
   background-color: red;
-  width: var(--width);
-  height: var(--height);
-  transform: translateZ(calc(var(--thickness) / 2));
-  background-color: var(--bgColor);
-  border-radius: 0 var(--radius) var(--radius) 0;
+  width: ${width}px;
+  height: ${height}px;
+  transform: translateZ(${thickness / 2}px);
+  background-color: ${bgColor};
+  border-radius: 0 ${radius}px ${radius}px 0;
   box-shadow: 5px 5px 20px #666;
 }
 
@@ -108,10 +98,10 @@ export const Book = ({
   content: ' ';
   background-color: blue;
   left: 0;
-  top: var(--pagesOffset);
-  width: var(--thickness);
-  height: calc(var(--height) - 2 * var(--pagesOffset));
-  transform: translateX(calc(var(--width) / 2 - var(--thickness) / 2 - var(--pagesOffset))) rotateY(90deg) translateZ(calc(var(--width) / 2));
+  top: ${pagesOffset}px;
+  width: ${thickness - 2}px;
+  height: ${height - 2 * pagesOffset}px;
+  transform: translateX(${width - thickness / 2 - pagesOffset}px) rotateY(90deg);
   background: linear-gradient(90deg, 
     #fff 0%,
     #f9f9f9 5%,
@@ -142,11 +132,11 @@ export const Book = ({
   top: 0;
   left: 0;
   content: ' ';
-  width: var(--width);
-  height: var(--height);
-  transform: translateZ(calc(0px - var(--thickness) / 2));
-  background-color: var(--bgColor);
-  border-radius: 0 var(--radius) var(--radius) 0;
+  width: ${width}px;
+  height: ${height}px;
+  transform: translateZ(${- thickness / 2}px);
+  background-color: ${bgColor};
+  border-radius: 0 ${radius}px ${radius}px 0;
   box-shadow: -10px 0 50px 10px #666;
 }`}
         html={`<a 

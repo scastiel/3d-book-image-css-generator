@@ -22,6 +22,7 @@ export const defaultValues = {
   bgColor: '#01060f',
   width: 200,
   height: 300,
+  pagesOffset: 3,
 }
 
 export const Controls = () => {
@@ -39,6 +40,7 @@ export const Controls = () => {
   const [thickness, setThickness] = useState(defaultValues.thickness)
   const [width, setWidth] = useState(defaultValues.width)
   const [height, setHeight] = useState(defaultValues.height)
+  const [pagesOffset, setPagesOffset] = useState(defaultValues.pagesOffset)
 
   const reset = useCallback(() => {
     setImageUrl(defaultValues.imageUrl)
@@ -53,6 +55,7 @@ export const Controls = () => {
     setThickness(defaultValues.thickness)
     setWidth(defaultValues.width)
     setHeight(defaultValues.height)
+    setPagesOffset(defaultValues.pagesOffset)
   }, [])
 
   return (
@@ -180,6 +183,15 @@ export const Controls = () => {
           step={25}
           onChange={(e) => setHeight(Number(e.target.value))}
         />
+        <RangeInput
+          label="Pages offset:"
+          unit="px"
+          min={0}
+          max={10}
+          value={pagesOffset}
+          step={1}
+          onChange={(e) => setPagesOffset(Number(e.target.value))}
+        />
         <button onClick={reset}>Reset with defaults</button>
       </div>
       <Book
@@ -187,14 +199,15 @@ export const Controls = () => {
         imageAlt={imageAlt || demoValues.imageAlt}
         href={href || demoValues.href}
         bgColor={bgColor}
-        rotate={`${-rotate}deg`}
-        rotateHover={`${-rotateHover}deg`}
-        perspective={`${perspective}px`}
-        transitionDuration={`${transitionDuration}s`}
-        radius={`${radius}px`}
-        thickness={`${thickness}px`}
-        width={`${width}px`}
-        height={`${height}px`}
+        rotate={-rotate}
+        rotateHover={-rotateHover}
+        perspective={perspective}
+        transitionDuration={transitionDuration}
+        radius={radius}
+        thickness={thickness}
+        width={width}
+        height={height}
+        pagesOffset={pagesOffset}
       />
     </div>
   )
