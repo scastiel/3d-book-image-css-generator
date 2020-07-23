@@ -47,6 +47,8 @@ export const Book = ({
       <p className="self-promotion">
         Pssst, the default cover is the one of the book I’m currently writing!{' '}
         <a href="https://theoutstanding.dev/">Check it out</a> 😉
+        <br />
+        Or have a look at <a href="https://scastiel.dev">my blog</a> 🙂
       </p>
       <Outputs
         /* prettier-ignore */
