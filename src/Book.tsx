@@ -45,10 +45,14 @@ export const Book = ({
         </div>
       </a>
       <p className="self-promotion">
+        Want to learn how to do it yourself? Check out my tutorial{' '}
+        <a href="https://scastiel.dev/posts/2020-07-23-animated-3d-book-css/">
+          Create an animated 3D book in CSS, step by step
+        </a>
+        !
+        <br />
         Pssst, the default cover is the one of the book I’m currently writing!{' '}
         <a href="https://theoutstanding.dev/">Check it out</a> 😉
-        <br />
-        Or have a look at <a href="https://scastiel.dev">my blog</a> 🙂
       </p>
       <Outputs
         /* prettier-ignore */
