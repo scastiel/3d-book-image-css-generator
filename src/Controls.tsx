@@ -61,6 +61,12 @@ export const Controls = () => {
   return (
     <div className="app">
       <h1>3D Book Image CSS Generator</h1>
+      <div className="self-promotion">
+        🚀 Want to upload your own cover image and create your animated 3D Book Cover? 🚀
+        <div className="threed-book-link">
+          I just launched <a href="https://3dbook.xyz">3dbook.xyz</a>, give it a look 🙂
+        </div>
+      </div>
       <div className="controls">
         <label>
           <span>Image URL:</span>

@@ -253,4 +253,12 @@ input[type='range']:focus::-ms-fill-upper {
   width: 100%;
   text-align: center;
   border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
+.threed-book-link {
+  font-size: large;
+}
+.threed-book-link a {
+  font-size: inherit;
 }
