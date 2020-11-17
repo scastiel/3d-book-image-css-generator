@@ -82,7 +82,8 @@ export const Book = ({
   animation: 1s ease 0s 1 initAnimation;
 }
 
-.book:hover {
+.book-container:hover .book, 
+.book-container:focus .book {
   transform: rotateY(${rotateHover}deg);
 }
 
