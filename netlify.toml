@@ -1,3 +1,7 @@
 [build]
   publish = "dist"
   command = "yarn build"
+[[redirects]]
+  from = "/"
+  to = "https://scastiel.dev/3dbook"
+  status = 301
