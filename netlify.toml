@@ -5,3 +5,4 @@
   from = "/"
   to = "https://scastiel.dev/3dbook"
   status = 301
+  force = true
